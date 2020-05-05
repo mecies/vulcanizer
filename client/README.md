@@ -1,4 +1,4 @@
-# vulcanizer
+# vulcanizer (client only readme)
 
 > Our extraordinary vulcano project
 
