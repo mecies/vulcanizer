@@ -7,9 +7,25 @@
       <h2 class="subtitle">
         Our extraordinary vulcano project
       </h2>
+      <h2 class="subtitle">volcanoes list</h2>
+      <VolcanoList />
     </div>
   </div>
 </template>
+
+<script>
+import { mapActions } from 'vuex'
+import VolcanoList from '@/components/VolcanoList.vue'
+
+export default {
+  components: {
+    VolcanoList
+  },
+  methods: {
+    ...mapActions(['volcano/setVolcanoes'])
+  }
+}
+</script>
 
 <style>
 .container {
