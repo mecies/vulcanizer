@@ -16,8 +16,11 @@ public class VolcanoResource {
     @ConfigProperty(name = "volcano_source")
     String volcanoUrl;
 
+//    TODO implement volcano data retrieving service
+//    TODO implement volcano data parsing service
+
     @GET
-    @Produces(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.TEXT_HTML)
     public String readAllVolcanoes() {
 //        TODO: Move this to dedicated service keeping it SOLID boi
         Client client = ClientBuilder.newBuilder().build();
