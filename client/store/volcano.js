@@ -1,7 +1,7 @@
-import { SET_VOLCANOES } from '@/store/mutation-types.js'
+import { SET_VOLCANOES } from '@/types/mutation-types.js'
 
 export const state = () => ({
-  volcanoes: ['vesuvio', 'etna']
+  volcanoes: []
 })
 
 export const mutations = {
@@ -11,7 +11,8 @@ export const mutations = {
 }
 
 export const actions = {
-  setVolcanoes({ commit }, volcanoes) {
-    commit(SET_VOLCANOES, volcanoes)
+  async fetchVolcanoes({ commit }) {
+    const volcanoes = await this.$axios.$get('/volcanoes')
+    commit(SET_VOLCANOES, volcanoes.flat())
   }
 }

@@ -1,3 +1,4 @@
+const path = require('path')
 export default {
   mode: 'universal',
   /*
@@ -19,7 +20,10 @@ export default {
   /*
    ** Customize the progress-bar color
    */
-  loading: { color: '#fff' },
+  loading: {
+    color: '#fc8181',
+    height: '4px'
+  },
   /*
    ** Global CSS
    */
@@ -41,14 +45,28 @@ export default {
    */
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
-    '@nuxtjs/axios'
+    '@nuxtjs/axios',
+    '@nuxtjs/proxy',
+    'nuxt-purgecss'
   ],
+  proxy: {
+    '/api': {
+      target: 'http://localhost:8080/',
+      pathRewrite: {
+        '^/api': '/'
+      }
+    }
+  },
+  purgeCSS: {
+    mode: 'postcss',
+    enabled: process.env.NODE_ENV === 'production'
+  },
   /*
    ** Axios module configuration
    ** See https://axios.nuxtjs.org/options
    */
   axios: {
-    baseUrl: 'http://localhost:8080',
+    prefix: '/api',
     retry: { retries: 3 },
     headers: {
       common: {
@@ -64,6 +82,16 @@ export default {
     /*
      ** You can extend webpack config here
      */
+    postcss: {
+      plugins: {
+        'postcss-import': {},
+        tailwindcss: path.resolve(__dirname, './tailwind.config.js'),
+        'postcss-nested': {}
+      }
+    },
+    preset: {
+      stage: 1 // see https://tailwindcss.com/docs/using-with-preprocessors#future-css-featuress
+    },
     extend(config, ctx) {}
   }
 }
