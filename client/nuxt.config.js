@@ -33,7 +33,8 @@ export default {
    */
   buildModules: [
     // Doc: https://github.com/nuxt-community/eslint-module
-    '@nuxtjs/eslint-module'
+    '@nuxtjs/eslint-module',
+    '@nuxtjs/tailwindcss'
   ],
   /*
    ** Nuxt.js modules
@@ -46,7 +47,16 @@ export default {
    ** Axios module configuration
    ** See https://axios.nuxtjs.org/options
    */
-  axios: {},
+  axios: {
+    baseUrl: 'http://localhost:8080',
+    retry: { retries: 3 },
+    headers: {
+      common: {
+        Accept: 'application/json, text/plain, */*'
+      }
+    }
+  },
+
   /*
    ** Build configuration
    */
