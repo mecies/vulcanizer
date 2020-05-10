@@ -1,6 +1,6 @@
 # vulcanizer (client only readme)
 
-> Our extraordinary vulcano project
+> Our extraordinary volcano project
 
 ## Build Setup
 

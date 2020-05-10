@@ -1,41 +1,30 @@
 <template>
-  <div class="container">
-    <div>
-      <h1 class="title">
-        vulcanizer
-      </h1>
-      <h2 class="subtitle">
-        Our extraordinary vulcano project
-      </h2>
-    </div>
+  <div class="flex flex-col justify-center items-center mt-10">
+    <h1 class="text-6xl my-2">
+      <span class="text-red-400">VULCAN</span>
+      <span>IZER</span>
+    </h1>
+    <h2 class="text-3xl my-2">
+      Our extraordinary volcano project
+    </h2>
+    <h2 class="text-2xl my-2">Press the button to load list of volcanoes</h2>
+    <button class="rounded-lg border p-4  mb-4" @click="fetchVolcanoes">
+      🎉 CLICK ME
+    </button>
+    <VolcanoList />
   </div>
 </template>
 
-<style>
-.container {
-  margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
+<script>
+import { mapActions } from 'vuex'
+import VolcanoList from '@/components/VolcanoList.vue'
 
-.title {
-  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
+export default {
+  components: {
+    VolcanoList
+  },
+  methods: {
+    ...mapActions(mapActions('volcano', ['fetchVolcanoes']))
+  }
 }
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-</style>
+</script>
