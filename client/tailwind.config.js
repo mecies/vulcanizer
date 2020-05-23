@@ -1,11 +1,17 @@
 /*
-** TailwindCSS Configuration File
-**
-** Docs: https://tailwindcss.com/docs/configuration
-** Default: https://github.com/tailwindcss/tailwindcss/blob/master/stubs/defaultConfig.stub.js
-*/
+ ** TailwindCSS Configuration File
+ **
+ ** Docs: https://tailwindcss.com/docs/configuration
+ ** Default: https://github.com/tailwindcss/tailwindcss/blob/master/stubs/defaultConfig.stub.js
+ */
 module.exports = {
-  theme: {},
+  theme: {
+    colors: {
+      lava: '#CF1020',
+      volcano: '#4E2728',
+      cream: '#E8DBDB'
+    }
+  },
   variants: {},
   plugins: [],
   purge: {
