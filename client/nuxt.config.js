@@ -47,7 +47,8 @@ export default {
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
     '@nuxtjs/proxy',
-    'nuxt-purgecss'
+    'nuxt-purgecss',
+    'nuxt-svg-loader'
   ],
   proxy: {
     '/api': {
