@@ -25,7 +25,7 @@ public class VolcanoResource {
     VolcanoRetrievingService volcanoRetrievingService;
 
     @Inject
-    VolcanoParsingService volcanoParsingService;
+    private VolcanoParsingService volcanoParsingService;
 
     @GET
     @Path("/source")
