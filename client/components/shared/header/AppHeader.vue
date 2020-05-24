@@ -2,7 +2,8 @@
   <div class="flex flex-row justify-around">
     <app-header-item
       v-for="(icon, index) in icons"
-      :icon="icon"
+      :icon="icon.name"
+      :selected="icon.selected"
       :key="`icon-${icon}-index${index}`"
     />
   </div>
@@ -10,15 +11,35 @@
 
 <script>
 import AppHeaderItem from '@/components/shared/header/AppHeaderItem.vue'
-import { headerData } from '@/data/headerData'
 
 export default {
   components: {
     AppHeaderItem
   },
-  data() {
-    return {
-      icons: headerData.icons
+  computed: {
+    icons() {
+      return [
+        {
+          name: 'home',
+          selected: this.$router.history.current.name === 'home'
+        },
+        {
+          name: 'dices',
+          selected: this.$router.history.current.name === 'dices'
+        },
+        {
+          name: 'volcano',
+          selected: this.$router.history.current.name === 'volcano'
+        },
+        {
+          name: 'volcanoList',
+          selected: this.$router.history.current.name === 'volcanoList'
+        },
+        {
+          name: 'location',
+          selected: this.$router.history.current.name === 'location'
+        }
+      ]
     }
   }
 }
