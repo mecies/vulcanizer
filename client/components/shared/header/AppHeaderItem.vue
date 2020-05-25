@@ -1,11 +1,12 @@
 <template>
-  <div
+  <nuxt-link
     :class="
       `flex items-center justify-center h-16 w-full bg-${backgroundClass}`
     "
+    :to="to"
   >
     <svg-icon :selected="selected" :iconName="icon"><slot></slot></svg-icon>
-  </div>
+  </nuxt-link>
 </template>
 
 <script>
@@ -23,6 +24,10 @@ export default {
     selected: {
       type: Boolean,
       default: false
+    },
+    to: {
+      type: String,
+      required: true
     }
   },
   computed: {

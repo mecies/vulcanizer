@@ -1,10 +1,11 @@
 <template>
   <div class="flex flex-row justify-around">
     <app-header-item
-      v-for="(icon, index) in icons"
+      v-for="({ path, icon }, index) in options"
       :key="`icon-${icon}-index${index}`"
-      :icon="icon.name"
-      :selected="icon.selected"
+      :icon="icon"
+      :to="path"
+      :selected="$route.path === path"
     />
   </div>
 </template>
@@ -18,31 +19,28 @@ export default {
   },
   data() {
     return {
-      iconNames: [
+      options: [
         {
-          name: 'index'
+          path: '/',
+          icon: 'index'
         },
         {
-          name: 'dices'
+          path: '/random',
+          icon: 'dices'
         },
         {
-          name: 'volcano'
+          path: '/volcano',
+          icon: 'volcano'
         },
         {
-          name: 'volcanoList'
+          path: '/volcanoes',
+          icon: 'volcanoList'
         },
         {
-          name: 'location'
+          path: '/location',
+          icon: 'location'
         }
       ]
-    }
-  },
-  computed: {
-    icons() {
-      return this.iconNames.map(({ name }) => ({
-        name,
-        selected: this.$router.history.current.name === name
-      }))
     }
   }
 }

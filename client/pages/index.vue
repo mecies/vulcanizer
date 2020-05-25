@@ -9,7 +9,10 @@
         explosive source of volcano information
       </text-title>
       <text-subtitle class="text-center">
-        explosive source of volcano information
+        developed with love by <br />
+        <span class="text-lava">Maciek</span>
+        &#x00026;
+        <span class="text-lava">Maciek</span>
       </text-subtitle>
     </div>
   </div>

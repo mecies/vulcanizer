@@ -10,7 +10,8 @@
     "start": "nuxt start",
     "generate": "nuxt generate",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
-    "test": "jest"
+    "test": "jest",
+    "deploy": "push-dir --dir=dist --branch=gh-pages --cleanup"
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.3.6",
@@ -34,6 +35,7 @@
     "postcss-import": "^12.0.1",
     "postcss-nested": "^4.2.1",
     "prettier": "^1.19.1",
+    "push-dir": "^0.4.1",
     "tailwindcss": "^1.4.5",
     "vue-jest": "^4.0.0-0"
   }
