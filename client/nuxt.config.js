@@ -1,6 +1,9 @@
 const path = require('path')
 export default {
   mode: 'spa',
+  router: {
+    base: '/vulcanizer/'
+  },
   /*
    ** Headers of the page
    */
