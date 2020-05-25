@@ -2,7 +2,9 @@
   <nuxt-link class="w-full" :to="to">
     <div
       :class="
-        `flex items-center justify-center h-16 w-full bg-${backgroundClass}`
+        `flex items-center justify-center h-16 w-full bg-${
+          this.selected ? 'lava' : 'volcano'
+        }`
       "
     >
       <svg-icon :selected="selected" :iconName="icon" />
@@ -29,11 +31,6 @@ export default {
     to: {
       type: String,
       required: true
-    }
-  },
-  computed: {
-    backgroundClass() {
-      return this.selected ? 'lava' : 'volcano'
     }
   }
 }
