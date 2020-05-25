@@ -10,6 +10,9 @@ module.exports = {
       lava: '#CF1020',
       volcano: '#4E2728',
       cream: '#E8DBDB'
+    },
+    gridTemplateRows: {
+      'home-mobile': '2fr 1fr 1fr'
     }
   },
   variants: {},
