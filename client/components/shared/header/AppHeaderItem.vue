@@ -1,11 +1,12 @@
 <template>
-  <nuxt-link
-    :class="
-      `flex items-center justify-center h-16 w-full bg-${backgroundClass}`
-    "
-    :to="to"
-  >
-    <svg-icon :selected="selected" :iconName="icon"><slot></slot></svg-icon>
+  <nuxt-link class="w-full" :to="to">
+    <div
+      :class="
+        `flex items-center justify-center h-16 w-full bg-${backgroundClass}`
+      "
+    >
+      <svg-icon :selected="selected" :iconName="icon" />
+    </div>
   </nuxt-link>
 </template>
 
