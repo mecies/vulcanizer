@@ -1,11 +1,8 @@
 <template>
   <nuxt-link class="w-full" :to="to">
     <div
-      :class="
-        `flex items-center justify-center h-16 w-full bg-${
-          this.selected ? 'lava' : 'volcano'
-        }`
-      "
+      class="flex items-center justify-center h-16 w-full bg-lava"
+      :class="this.selected ? 'bg-lava' : 'bg-volcano'"
     >
       <svg-icon :selected="selected" :iconName="icon" />
     </div>
