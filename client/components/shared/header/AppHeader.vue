@@ -1,12 +1,14 @@
 <template>
-  <div class="flex flex-row justify-around">
-    <app-header-item
-      v-for="({ path, icon }, index) in options"
-      :key="`icon-${icon}-index${index}`"
-      :icon="icon"
-      :to="path"
-      :selected="$route.path === path"
-    />
+  <div class="container fixed pb-8">
+    <div class="flex flex-row justify-around">
+      <app-header-item
+        v-for="({ path, icon }, index) in options"
+        :key="`icon-${icon}-index${index}`"
+        :icon="icon"
+        :to="path"
+        :selected="$route.path === path"
+      />
+    </div>
   </div>
 </template>
 

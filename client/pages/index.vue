@@ -1,9 +1,6 @@
 <template>
-  <div class="container">
-    <app-header />
-    <div
-      class="my-12 h-full grid grid-rows-3 grid-cols-1 items-home-mobile row-gap-6"
-    >
+  <div class="pt-16">
+    <div class="mt-16 grid grid-rows-3 grid-cols-1 items-home-mobile row-gap-6">
       <logo />
       <text-title class="text-center">
         explosive source of volcano information
@@ -20,13 +17,12 @@
 
 <script>
 import Logo from '@/components/shared/Logo.vue'
-import AppHeader from '@/components/shared/header/AppHeader.vue'
 import TextTitle from '@/components/shared/text/TextTitle.vue'
 import TextSubtitle from '@/components/shared/text/TextSubtitle.vue'
 
 export default {
+  layout: 'withHeader',
   components: {
-    AppHeader,
     Logo,
     TextTitle,
     TextSubtitle
