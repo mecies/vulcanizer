@@ -12,6 +12,9 @@
 import SvgIcon from '@/components/shared/svg/SvgIcon.vue'
 
 export default {
+  components: {
+    SvgIcon
+  },
   props: {
     icon: {
       type: String,
@@ -26,9 +29,6 @@ export default {
     backgroundClass() {
       return this.selected ? 'lava' : 'volcano'
     }
-  },
-  components: {
-    SvgIcon
   }
 }
 </script>

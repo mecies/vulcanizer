@@ -3,3 +3,8 @@
     <nuxt />
   </div>
 </template>
+<style>
+html {
+  font-family: 'Short Stack', cursive;
+}
+</style>

@@ -2,9 +2,9 @@
   <div class="flex flex-row justify-around">
     <app-header-item
       v-for="(icon, index) in icons"
+      :key="`icon-${icon}-index${index}`"
       :icon="icon.name"
       :selected="icon.selected"
-      :key="`icon-${icon}-index${index}`"
     />
   </div>
 </template>
@@ -16,30 +16,33 @@ export default {
   components: {
     AppHeaderItem
   },
-  computed: {
-    icons() {
-      return [
+  data() {
+    return {
+      iconNames: [
         {
-          name: 'home',
-          selected: this.$router.history.current.name === 'home'
+          name: 'index'
         },
         {
-          name: 'dices',
-          selected: this.$router.history.current.name === 'dices'
+          name: 'dices'
         },
         {
-          name: 'volcano',
-          selected: this.$router.history.current.name === 'volcano'
+          name: 'volcano'
         },
         {
-          name: 'volcanoList',
-          selected: this.$router.history.current.name === 'volcanoList'
+          name: 'volcanoList'
         },
         {
-          name: 'location',
-          selected: this.$router.history.current.name === 'location'
+          name: 'location'
         }
       ]
+    }
+  },
+  computed: {
+    icons() {
+      return this.iconNames.map(({ name }) => ({
+        name,
+        selected: this.$router.history.current.name === name
+      }))
     }
   }
 }

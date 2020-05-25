@@ -1,6 +1,6 @@
 <template>
   <svg
-    v-if="iconName === 'home'"
+    v-if="iconName === 'index'"
     :width="width"
     :height="height"
     viewBox="0 0 36 30"
