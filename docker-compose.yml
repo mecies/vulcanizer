@@ -9,3 +9,15 @@ services:
     environment:
       - JAVA_OPTS=${JAVA_OPTS}
       - JAVA_JDWP_OPTS=${JAVA_JDWP_OPTS}
+    links:
+      - postgres
+
+  postgres:
+    image: postgres:13
+    environment:
+      - POSTGRES_USER=su #To be: ${POSTGRES_USER}
+      - POSTGRES_PASSWORD=123  #To be: ${POSTGRES_PASSWORD}
+    ports:
+      - 5432:5432
+    volumes:
+      - docker_compose/import.sql /docker-entrypoint-initdb.d/
