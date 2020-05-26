@@ -28,3 +28,19 @@ Or, if you don't have GraalVM installed, you can run the native executable build
 You can then execute your native executable with: `./target/vulcanizer-1.0-SNAPSHOT-runner`
 
 If you want to learn more about building native executables, please consult https://quarkus.io/guides/building-native-image.
+
+## Runinng backend in Docker
+
+Docker image was build as multistage to reduce the amount of software one needs to install on its machine. In this scenario, the only
+ thing that is required is docker itself (You won't need GraalVM to start backend! https://www.graalvm.org/).
+
+Navigate to server `vulcanizer` directory (TBR) and build image by executing:
+
+`docker build -f src/main/docker/Dockerfile.multistage -t vulcanizer/backend .`
+
+This line will run 2 docker jobs - the first one will create native GraalVM image and pass it as a argument to another one which will build actual application and set it up for running as docker service (keep in mind it might take a while).
+
+After that, one can run backend in Docker by executing:
+
+`docker run -i --rm -p 8080:8080 vulcanizer/backend`
+

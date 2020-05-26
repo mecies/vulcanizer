@@ -21,7 +21,6 @@ public class VolcanoParsingService {
         Elements tables = document.select("table");
         Element tab = tables.get(VOLCANO_TABLE_LOCATION);
         Element tbody = tab.select("tbody").get(0);
-
         return tbody.select("tr")
                 .stream()
                 .map(row -> row.select("td"))
