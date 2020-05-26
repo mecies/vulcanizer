@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  backend:
+    image: vulcanizer/backend
+    build: vulcanizer/src/main/docker/Dockerfile.multistage .
+    ports:
+      - 8080:8080
+    environment:
+      - JAVA_OPTS=${JAVA_OPTS}
+      - JAVA_JDWP_OPTS=${JAVA_JDWP_OPTS}
