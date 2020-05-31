@@ -5,7 +5,13 @@
     "
     :to="to"
   >
-    <svg-icon :selected="selected" :iconName="icon"><slot></slot></svg-icon>
+    <svg-icon
+      class="transition duration-200 ease-in-out transform hover:-translate-y-1 hover:scale-125"
+      :selected="selected"
+      :iconName="icon"
+    >
+      <slot></slot>
+    </svg-icon>
   </nuxt-link>
 </template>
 

@@ -19,4 +19,9 @@ export default {
 html {
   font-family: 'Short Stack', cursive;
 }
+
+::selection {
+  color: #cf1020;
+  background: #4e2728;
+}
 </style>

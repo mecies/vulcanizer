@@ -1,15 +1,19 @@
 <template>
-  <div class="pt-16">
-    <div class="mt-16 grid grid-rows-3 grid-cols-1 items-home-mobile row-gap-6">
+  <div class="pt-16 lg:pt-24 min-h-screen">
+    <div class="mt-16 lg:mt-24 grid grid-cols-1 row-gap-10">
       <logo />
       <text-title class="text-center">
         explosive source of volcano information
       </text-title>
       <text-subtitle class="text-center">
         developed with love by <br />
-        <span class="text-lava">Maciek</span>
+        <a href="https://github.com/mecies" target="_blank" class="text-lava">
+          Maciek
+        </a>
         &#x00026;
-        <span class="text-lava">Maciek</span>
+        <a href="https://github.com/macryo" target="_blank" class="text-lava">
+          Maciek
+        </a>
       </text-subtitle>
     </div>
   </div>
