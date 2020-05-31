@@ -1,5 +1,5 @@
 import { SET_VOLCANOES } from '@/types/mutation-types.js'
-
+// getters get x vulcanoes
 export const state = () => ({
   volcanoes: []
 })

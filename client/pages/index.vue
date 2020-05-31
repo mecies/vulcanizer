@@ -1,30 +1,35 @@
 <template>
-  <div class="flex flex-col justify-center items-center mt-10">
-    <h1 class="text-6xl my-2">
-      <span class="text-red-400">VULCAN</span>
-      <span>IZER</span>
-    </h1>
-    <h2 class="text-3xl my-2">
-      Our extraordinary volcano project
-    </h2>
-    <h2 class="text-2xl my-2">Press the button to load list of volcanoes</h2>
-    <button class="rounded-lg border p-4  mb-4" @click="fetchVolcanoes">
-      🎉 CLICK ME
-    </button>
-    <VolcanoList />
+  <div class="pt-16 lg:pt-24 min-h-screen">
+    <div class="mt-16 lg:mt-24 grid grid-cols-1 row-gap-10">
+      <logo />
+      <text-title class="text-center">
+        explosive source of volcano information
+      </text-title>
+      <text-subtitle class="text-center">
+        developed with love by <br />
+        <a href="https://github.com/mecies" target="_blank" class="text-lava">
+          Maciek
+        </a>
+        &#x00026;
+        <a href="https://github.com/macryo" target="_blank" class="text-lava">
+          Maciek
+        </a>
+      </text-subtitle>
+    </div>
   </div>
 </template>
 
 <script>
-import { mapActions } from 'vuex'
-import VolcanoList from '@/components/VolcanoList.vue'
+import Logo from '@/components/shared/Logo.vue'
+import TextTitle from '@/components/shared/text/TextTitle.vue'
+import TextSubtitle from '@/components/shared/text/TextSubtitle.vue'
 
 export default {
+  layout: 'withHeader',
   components: {
-    VolcanoList
-  },
-  methods: {
-    ...mapActions(mapActions('volcano', ['fetchVolcanoes']))
+    Logo,
+    TextTitle,
+    TextSubtitle
   }
 }
 </script>
