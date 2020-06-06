@@ -6,7 +6,8 @@
     :to="to"
   >
     <svg-icon
-      class="transition duration-200 ease-in-out transform hover:-translate-y-1 hover:scale-125"
+      class="transition duration-200 ease-in-out transform hover:scale-125"
+      :class="selected && 'scale-125'"
       :selected="selected"
       :iconName="icon"
     >
