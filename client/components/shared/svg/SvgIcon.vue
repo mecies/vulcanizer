@@ -12,6 +12,20 @@
       :fill="primaryColor"
     />
   </svg>
+
+  <svg
+    v-else-if="iconName === 'arrowDown'"
+    width="30"
+    height="18"
+    viewBox="0 0 20 12"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M10.5 12L1.25888 2.75888C0.82344 2.32344 0.774448 1.63407 1.14393 1.14142C1.59576 0.538988 2.4764 0.476403 3.00888 1.00888L10.5 8.5L17.0092 1.12296C17.5204 0.543519 18.4349 0.579879 18.8986 1.19808C19.248 1.66405 19.2191 2.31214 18.8294 2.74508L10.5 12Z"
+      fill="#CF1020"
+    />
+  </svg>
   <svg
     v-else-if="iconName === 'dices'"
     :width="width"

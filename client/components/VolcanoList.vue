@@ -1,9 +1,9 @@
 <template>
-  <ul>
+  <ul class="space-y-4">
     <li
       v-for="(volcano, index) in volcanoes"
       :key="`volcano-${volcano}-index-${index}`"
-      class="mb-4"
+      class="flex justify-center"
     >
       <VolcanoCard :name="volcano.name" :country="volcano.country" />
     </li>
@@ -11,14 +11,20 @@
 </template>
 
 <script>
-import { mapState } from 'vuex'
 import VolcanoCard from '@/components/VolcanoCard'
 
 export default {
+  beforeMount() {
+    this.$store.dispatch('volcano/fetchVolcanoes')
+  },
   components: {
     VolcanoCard
   },
-  computed: mapState('volcano', ['volcanoes'])
+  computed: {
+    volcanoes() {
+      return this.$store.getters['volcano/getRandomTen']
+    }
+  }
 }
 </script>
 
