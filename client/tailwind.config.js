@@ -6,10 +6,18 @@
  */
 module.exports = {
   theme: {
-    colors: {
-      lava: '#CF1020',
-      volcano: '#4E2728',
-      cream: '#E8DBDB'
+    extend: {
+      height: {
+        '0.5': '1px'
+      },
+      colors: {
+        lava: '#CF1020',
+        volcano: '#4E2728',
+        cream: '#E8DBDB'
+      },
+      borderRadius: {
+        xl: '1rem'
+      }
     }
   },
   variants: {},

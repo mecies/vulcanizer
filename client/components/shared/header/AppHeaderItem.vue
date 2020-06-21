@@ -1,12 +1,13 @@
 <template>
   <nuxt-link
     :class="
-      `flex items-center justify-center h-16 w-full bg-${backgroundClass}`
+      `flex items-center justify-center py-3 sm:py-4 w-full bg-${backgroundClass}`
     "
     :to="to"
   >
     <svg-icon
-      class="transition duration-200 ease-in-out transform hover:-translate-y-1 hover:scale-125"
+      class="transition duration-200 ease-in-out transform hover:scale-125"
+      :class="selected && 'scale-125'"
       :selected="selected"
       :iconName="icon"
     >
