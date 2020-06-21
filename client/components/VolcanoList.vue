@@ -5,7 +5,13 @@
       :key="`volcano-${volcano}-index-${index}`"
       class="flex justify-center"
     >
-      <VolcanoCard :name="volcano.name" :country="volcano.country" />
+      <VolcanoCard
+        :name="volcano.name"
+        :country="volcano.country"
+        :elevation="volcano.elevation"
+        :latitude="volcano.latitude"
+        :longitude="volcano.longitude"
+      />
     </li>
   </ul>
 </template>

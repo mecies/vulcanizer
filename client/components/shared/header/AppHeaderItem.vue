@@ -1,7 +1,7 @@
 <template>
   <nuxt-link
     :class="
-      `flex items-center justify-center h-16 w-full bg-${backgroundClass}`
+      `flex items-center justify-center py-3 sm:py-4 w-full bg-${backgroundClass}`
     "
     :to="to"
   >
