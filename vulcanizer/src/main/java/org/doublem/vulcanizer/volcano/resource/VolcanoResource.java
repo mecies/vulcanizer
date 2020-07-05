@@ -42,6 +42,16 @@ public class VolcanoResource {
         String volcanoData = this.volcanoRetrievingService.retrieveVolcanoData();
         List<Volcano> volcanoes = this.volcanoParsingService.getVolcanoesList(volcanoData);
         this.volcanoRepository.save(volcanoes.get(0));
+        System.out.println();
+        System.out.println();
+        for (int i = 0;i < volcanoes.size(); i++) {
+            Volcano vulcan = volcanoes.get(i);
+            System.out.println("(" + (i+1) + ", \'" + vulcan.getCountry() + "\', "+ vulcan.getElevation() + ", \'"+vulcan.getLastKnownEruption()+
+                    "\', "+vulcan.getLatitude()+", "+vulcan.getLongitude()+", \'"+vulcan.getName()+"\', \'"+vulcan.getNumber()+
+                    "\', \'"+vulcan.getRegion()+"\', \'"+vulcan.getStatus()+"\', \'"+vulcan.getType()+"\'),");
+        }
+        System.out.println();
+        System.out.println();
         return volcanoes;
     }
 
